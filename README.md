@@ -1,5 +1,10 @@
 Build:
+
 npm run build
 
+
+
+
 Run:
-npm serve
+
+npm run serve
