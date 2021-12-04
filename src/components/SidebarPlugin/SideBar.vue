@@ -4,7 +4,7 @@
 
             <!--Toggler-->
             <navbar-toggle-button @click.native="showSidebar">
-                
+
             </navbar-toggle-button>
             <router-link class="navbar-brand" to="/">
                 <img :src="logo" class="navbar-brand-img" alt="...">
@@ -88,19 +88,19 @@
                     <li class="nav-item">
                         <a class="nav-link"
                            href="https://www.creative-tim.com/learning-lab/bootstrap-vue/alerts/argon-dashboard">
-                            <i class="ni ni-spaceship"></i> Getting started
+                            <i class="ni ni-spaceship"></i> JIRA
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
                            href="https://www.creative-tim.com/learning-lab/bootstrap-vue/colors/argon-dashboard">
-                            <i class="ni ni-palette"></i> Foundation
+                            <i class="ni ni-palette"></i> GITHUB Frontend
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
                            href="https://www.creative-tim.com/learning-lab/bootstrap-vue/alerts/argon-dashboard">
-                            <i class="ni ni-ui-04"></i> Components
+                            <i class="ni ni-ui-04"></i> GITHUB Backend
                         </a>
                     </li>
                 </ul>

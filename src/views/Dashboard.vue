@@ -27,14 +27,13 @@
         </b-col>
       </b-row>
       <div>
-        {{ this.bigLineChart.chartData.datasets.data[0].date }}
+        {{bigLineChart}}
       </div>
     </b-container>
   </div>
 
 </template>
 <script>
-  // Charts
   import * as chartConfigs from '@/components/Charts/config';
   import LineChart from '@/components/Charts/LineChart';
 
@@ -45,12 +44,13 @@
     data() {
       return {
         tmpData: [],
+        predictionData: null,
         bigLineChart: {
           chartData: {
             datasets: [
               {
-                data: [],
                 label: 'Performance',
+                data: []
               }
             ],
             labels: [],
@@ -65,19 +65,33 @@
         let yAxisTable = []
 
         for (let i=0; i<10; i++){
-          xAxisTable.push(new Date(this.tmpData[i].data * 1000))
-          console.log(xAxisTable)
+          xAxisTable.push(this.tmpData[i].time.toString())
           yAxisTable.push(this.tmpData[i].value)
         }
         this.bigLineChart.chartData.datasets.data = yAxisTable
         this.bigLineChart.chartData.labels = xAxisTable
-        console.log(yAxisTable)
+        console.log(this.bigLineChart.chartData.datasets.data)
+        console.log(this.bigLineChart.chartData.labels)
       }
     },
-    mounted() {
-      axios.get("http://127.0.0.1:8080/hello/dbtest/")
-        .then(response => (this.tmpData = response.data))
-        .then(console.log(this.tmpData),this.segregateData())
+     mounted() {
+      axios
+        .get('http://127.0.0.1:8080/hello/dbtest/')
+          .then(response => {(this.tmpData = response.data),
+            console.log(this.tmpData),
+            this.segregateData()
+          } )
+        //.then()
+        //.then()
+
+      // axios
+      //   .post("http://127.0.0.1:8080/predict",{hello:1.12,
+      //     v212 :1.12,
+      //     v3 :1.12,
+      //     v4 :1.12,
+      //     v5 :1.12})
+      //   .then(response => (this.predictionData = response.data))
+        //.then(console.log(tmpData),this.segregateData())
     }
   };
 </script>

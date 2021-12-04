@@ -1,63 +1,57 @@
 <template>
-  <b-card no-body class="card-profile" alt="Image placeholder" img-top>
-    <b-row class="justify-content-center">
-      <b-col lg="3" class="order-lg-2">
-        <div class="card-profile-image">
-          <a href="#">
-            <b-img src="img/theme/team-4.jpg" rounded="circle" />
-          </a>
-        </div>
-      </b-col>
-    </b-row>
+  <b-card no-body class="card-profile">
 
-    <b-card-header class="text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-      <div class="d-flex justify-content-between">
-        <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
-        <a href="#" class="btn btn-sm btn-default float-right">Message</a>
-      </div>
-    </b-card-header>
-
-    <b-card-body class="pt-0">
-      <b-row>
-        <b-col >
-          <div class="card-profile-stats d-flex justify-content-center mt-md-5">
-            <div>
-              <span class="heading">22</span>
-              <span class="description">Friends</span>
-            </div>
-            <div>
-              <span class="heading">10</span>
-              <span class="description">Photos</span>
-            </div>
-            <div>
-              <span class="heading">89</span>
-              <span class="description">Comments</span>
-            </div>
-          </div>
-        </b-col>
-      </b-row>
-      <div class="text-center">
-        <h5 class="h3">
-          Jessica Jones<span class="font-weight-light">, 27</span>
-        </h5>
-        <div class="h5 font-weight-300">
-          <i class="ni location_pin mr-2"></i>Bucharest, Romania
-        </div>
-        <div class="h5 mt-4">
-          <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
-        </div>
-        <div>
-          <i class="ni education_hat mr-2"></i>University of Computer Science
-        </div>
-        <hr class="my-4">
-        <p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.</p>
-        <a href="#">Show more</a>
-
+    <b-card-body class="pt-3">
+      <div id="app">
+        <ol v-on:click="increasePercent">
+          <li v-for="(loading, index) in loading" :key="index">
+            <label :class="{ passed: percent >= loading.percent }">
+              {{ loading.text }}
+            </label>
+          </li>
+        </ol>
       </div>
     </b-card-body>
+
   </b-card>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      loading: [
+        { text: "Sending request", percent: 10 },
+        { text: "Putting new data to ML model", percent: 20 },
+        { text: "Testing", percent: 50 },
+        { text: "Analysing ", percent: 60 },
+        { text: "Sending data back to WebSite", percent: 70 },
+        { text: "Displaying data", percent: 90 },
+      ],
+      percent: 10,
+      interval: null,
+    }
+  },
+  methods: {
+    increasePercent: function() {
+      this.percent += 10
+    },
+  },
+  created() {
+    this.interval = setInterval(this.increasePercent, 1000)
+  },
+}
 </script>
-<style></style>
+
+<style lang="scss">
+li {
+  margin: 8px 0;
+  font-weight: bolder;
+  label {
+    opacity: 0.4;
+    &.passed {
+      opacity: 1;
+      text-decoration: line-through;
+    }
+  }
+}
+</style>
