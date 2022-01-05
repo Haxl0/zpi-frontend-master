@@ -2,7 +2,6 @@ import '@/polyfills';
 import Notifications from '@/components/NotificationPlugin';
 import { configure } from 'vee-validate';
 import GlobalComponents from './globalComponents';
-import GlobalDirectives from './globalDirectives';
 import SideBar from '@/components/SidebarPlugin';
 
 window.axios = require('axios');
@@ -31,7 +30,6 @@ Object.keys(rules).forEach(rule => {
 export default {
   install(Vue) {
     Vue.use(GlobalComponents);
-    Vue.use(GlobalDirectives);
     Vue.use(SideBar);
     Vue.use(Notifications);
     Vue.use(BootstrapVue);

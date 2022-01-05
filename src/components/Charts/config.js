@@ -199,14 +199,17 @@ export let lineChartOptionsBlue = {
     yAxes: [
       {
         barPercentage: 1.6,
+        min: 450,
+        max: 500,
+        stepSize: 5,
         gridLines: {
           drawBorder: false,
           color: 'rgba(29,140,248,0.0)',
           zeroLineColor: 'transparent'
         },
         ticks: {
-          suggestedMin: 60,
-          suggestedMax: 125,
+          suggestedMin: 400,
+          suggestedMax: 500,
           padding: 20,
           fontColor: '#9e9e9e'
         }

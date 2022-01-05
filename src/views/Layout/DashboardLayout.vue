@@ -16,7 +16,7 @@
         <sidebar-item
               :link="{
                 name: 'Predict',
-                path: '/profile',
+                path: '/predict',
                 icon: 'ni ni-single-02 text-yellow'
                 }">
         </sidebar-item>

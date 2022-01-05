@@ -10,9 +10,8 @@
       <b-row>
         <b-col xl="8" class="mb-5 mb-xl-0">
           <card type="default" header-classes="bg-transparent">
-            <b-row align-v="center" slot="header">
+            <b-row align-v="left" slot="header">
               <b-col>
-                <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
                 <h5 class="h3 text-white mb-0">14HTA21CF901</h5>
               </b-col>
             </b-row>
@@ -25,9 +24,80 @@
             </line-chart>
           </card>
         </b-col>
+
+        <b-col xl="8" class="mb-5 mb-xl-0 pt-5">
+          <card type="default" header-classes="bg-transparent">
+            <b-row align-v="left" slot="header">
+              <b-col>
+                <h5 class="h3 text-white mb-0">14HTA21CF901</h5>
+              </b-col>
+            </b-row>
+            <line-chart
+              :height="350"
+              ref="bigChart"
+              :chart-data="bigLineChart.chartData"
+              :extra-options="bigLineChart.extraOptions"
+            >
+            </line-chart>
+          </card>
+        </b-col>
+
+        <b-col xl="8" class="mb-5 mb-xl-0 pt-5">
+          <card type="default" header-classes="bg-transparent">
+            <b-row align-v="left" slot="header">
+              <b-col>
+                <h5 class="h3 text-white mb-0">14HTA21CF901</h5>
+              </b-col>
+            </b-row>
+            <line-chart
+              :height="350"
+              ref="bigChart"
+              :chart-data="bigLineChart.chartData"
+              :extra-options="bigLineChart.extraOptions"
+            >
+            </line-chart>
+          </card>
+        </b-col>
+
+        <b-col xl="8" class="mb-5 mb-xl-0 pt-5">
+          <card type="default" header-classes="bg-transparent">
+            <b-row align-v="left" slot="header">
+              <b-col>
+                <h5 class="h3 text-white mb-0">14HTA21CF901</h5>
+              </b-col>
+            </b-row>
+            <line-chart
+              :height="350"
+              ref="bigChart"
+              :chart-data="bigLineChart.chartData"
+              :extra-options="bigLineChart.extraOptions"
+            >
+            </line-chart>
+          </card>
+        </b-col>
+
+        <b-col xl="8" class="mb-5 mb-xl-0 pt-5">
+          <card type="default" header-classes="bg-transparent">
+            <b-row align-v="left" slot="header">
+              <b-col>
+                <h5 class="h3 text-white mb-0">14HTA21CF901</h5>
+              </b-col>
+            </b-row>
+            <line-chart
+              :height="350"
+              ref="bigChart"
+              :chart-data="bigLineChart.chartData"
+              :extra-options="bigLineChart.extraOptions"
+            >
+            </line-chart>
+          </card>
+        </b-col>
+
       </b-row>
+
       <div>
-        {{bigLineChart}}
+        {{bigLineChart.chartData.labels}}
+        {{bigLineChart.chartData.datasets.data}}
       </div>
     </b-container>
   </div>
@@ -66,7 +136,7 @@
 
         for (let i=0; i<10; i++){
           xAxisTable.push(this.tmpData[i].time.toString())
-          yAxisTable.push(this.tmpData[i].value)
+          yAxisTable.push(parseFloat(this.tmpData[i].value))
         }
         this.bigLineChart.chartData.datasets.data = yAxisTable
         this.bigLineChart.chartData.labels = xAxisTable
@@ -74,24 +144,13 @@
         console.log(this.bigLineChart.chartData.labels)
       }
     },
-     mounted() {
+     created() {
       axios
         .get('http://127.0.0.1:8080/hello/dbtest/')
           .then(response => {(this.tmpData = response.data),
             console.log(this.tmpData),
             this.segregateData()
           } )
-        //.then()
-        //.then()
-
-      // axios
-      //   .post("http://127.0.0.1:8080/predict",{hello:1.12,
-      //     v212 :1.12,
-      //     v3 :1.12,
-      //     v4 :1.12,
-      //     v5 :1.12})
-      //   .then(response => (this.predictionData = response.data))
-        //.then(console.log(tmpData),this.segregateData())
     }
   };
 </script>

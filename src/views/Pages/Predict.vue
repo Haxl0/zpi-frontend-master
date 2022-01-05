@@ -24,9 +24,9 @@
   </div>
 </template>
 <script>
-  import EditProfileForm from './UserProfile/EditProfileForm.vue';
-  import UserCard from './UserProfile/UserCard.vue';
-  import Result from './UserProfile/Result.vue';
+  import EditProfileForm from './Prediction/PredictForm.vue';
+  import UserCard from './Prediction/Loading.vue';
+  import Result from './Prediction/Result.vue';
 
   export default {
     components: {
