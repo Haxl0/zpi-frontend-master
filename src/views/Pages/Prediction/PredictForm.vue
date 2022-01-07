@@ -8,18 +8,18 @@
           <b-col lg="6">
             <base-input
               type="text"
-              label="Zasiarczenie węgla"
-              placeholder="1.5"
-              v-model="user.zasiarczenie_wegla"
+              label="przeplyw_spalin_v1"
+              placeholder="487.0"
+              v-model="user.przeplyw_spalin_v1"
             >
             </base-input>
           </b-col>
           <b-col lg="6">
             <base-input
               type="text"
-              label="Ilość wapna - Stage I"
-              placeholder="1.0"
-              v-model="user.wapno_v1"
+              label="ilosc_wapna_kg"
+              placeholder="1151.0"
+              v-model="user.ilosc_wapna_kg"
             >
             </base-input>
           </b-col>
@@ -28,27 +28,63 @@
           <b-col lg="6">
             <base-input
               type="text"
-              label="Ilość wapna - Stage II"
-              placeholder="1.5"
-              v-model="user.wapno_v1"
+              label="temperatura_spalin_przed_reaktorem_c_v2"
+              placeholder="101.0"
+              v-model="user.temperatura_spalin_przed_reaktorem_c_v2"
             >
             </base-input>
           </b-col>
           <b-col lg="6">
             <base-input
               type="text"
-              label="Zmienna v4"
-              placeholder="1.6"
-              v-model="user.zmienna_v4"
+              label="powietrze_fluidyzacyjne"
+              placeholder="1099.0"
+              v-model="user.powietrze_fluidyzacyjne"
             >
             </base-input>
           </b-col>
           <b-col lg="6">
             <base-input
               type="text"
-              label="Zmienna v5"
-              placeholder="1.1"
-              v-model="user.zmienna_v5"
+              label="poziom_produktu_koncowego_val"
+              placeholder="48.0"
+              v-model="user.poziom_produktu_koncowego_val"
+            >
+            </base-input>
+          </b-col>
+          <b-col lg="6">
+            <base-input
+              type="text"
+              label="temperatura_spalin_przed_reaktorem_c_v1_val"
+              placeholder="101.0"
+              v-model="user.temperatura_spalin_przed_reaktorem_c_v1_val"
+            >
+            </base-input>
+          </b-col>
+          <b-col lg="6">
+            <base-input
+              type="text"
+              label="poziom_wapna_val"
+              placeholder="47.0"
+              v-model="user.poziom_wapna_val"
+            >
+            </base-input>
+          </b-col>
+          <b-col lg="6">
+            <base-input
+              type="text"
+              label="cisnienie_wody_val"
+              placeholder="983.0"
+              v-model="user.cisnienie_wody_val"
+            >
+            </base-input>
+          </b-col>
+          <b-col lg="6">
+            <base-input
+              type="text"
+              label="zasiarczenie_wegl"
+              placeholder="1718.0"
+              v-model="user.zasiarczenie_wegl"
             >
             </base-input>
           </b-col>
@@ -70,11 +106,15 @@ export default {
   data() {
     return {
       user: {
-        zasiarczenie_wegla: 1.8,
-        wapno_v1: 1.2,
-        wapno_v2: 1.5,
-        zmienna_v4: 1.9,
-        zmienna_v5: 2.0,
+        przeplyw_spalin_v1: 487.0,
+        ilosc_wapna_kg:  1151.0,
+        temperatura_spalin_przed_reaktorem_c_v2 : 101.0,
+        powietrze_fluidyzacyjne: 1099.0,
+        poziom_produktu_koncowego_val :48.0,
+        temperatura_spalin_przed_reaktorem_c_v1_val: 101.0,
+        poziom_wapna_val: 47.0,
+        cisnienie_wody_val: 983.0,
+        zasiarczenie_wegl: 1718.0
       },
       result: 1.0
     };
