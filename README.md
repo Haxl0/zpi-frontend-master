@@ -1,10 +1,3 @@
-Build:
+Build: npm run build
 
-npm run build
-
-
-
-
-Run:
-
-npm run serve
+Run: npm run serve

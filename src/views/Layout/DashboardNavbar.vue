@@ -4,7 +4,7 @@
     class="navbar-top navbar-expand"
     :class="{'navbar-dark': type === 'default'}"
   >
-    <a href="#" aria-current="page" class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block active router-link-active"> Instalacja odsiarczania spalin  - ML</a>
+    <a href="#" aria-current="page" class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block active router-link-active"> {{$route.name}} </a>
     <!-- Navbar links -->
     <b-navbar-nav class="align-items-center ml-md-auto">
       <!-- This item dont have <b-nav-item> because item have data-action/data-target on tag <a>, wich we cant add -->
@@ -30,7 +30,6 @@ export default {
     type: {
       type: String,
       default: 'default', // default|light
-      description: 'Look of the dashboard navbar. Default (Green) or light (gray)'
     }
   },
   computed: {

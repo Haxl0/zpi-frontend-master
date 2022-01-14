@@ -1,5 +1,6 @@
-import { Line, mixins } from 'vue-chartjs';
+import {Line, mixins} from 'vue-chartjs';
 import globalOptionsMixin from "@/components/Charts/globalOptionsMixin";
+
 export default {
   name: 'line-chart',
   extends: Line,
@@ -23,7 +24,7 @@ export default {
           this.renderChart(this.chartData, this.extraOptions);
         }
       },
-      { immediate: true }
+      {immediate: true}
     );
   }
 };

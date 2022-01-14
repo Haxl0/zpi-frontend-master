@@ -8,13 +8,13 @@ const routes = [
     children: [
       {
         path: '/dashboard',
-        name: 'dashboard',
+        name: 'Wykresy',
 
         component: () => import(/* webpackChunkName: "demo" */ '../views/Dashboard.vue')
       },
       {
         path: '/predict',
-        name: 'profile',
+        name: 'Predict',
         component: () => import(/* webpackChunkName: "demo" */ '../views/Pages/Predict.vue')
       }
     ]

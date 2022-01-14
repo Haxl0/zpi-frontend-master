@@ -4,11 +4,25 @@
 
             <!--Toggler-->
             <navbar-toggle-button @click.native="showSidebar">
-
             </navbar-toggle-button>
 
-            <div v-show="$sidebar.showSidebar" class="navbar-collapse collapse show" id="sidenav-collapse-main">
+            <router-link class="navbar-brand" to="/">
+                <img :src="logo" class="navbar-brand-img" alt="...">
+            </router-link>
 
+            <div v-show="$sidebar.showSidebar" class="navbar-collapse collapse show" id="sidenav-collapse-main">
+                <div class="navbar-collapse-header d-md-none">
+                    <div class="row">
+                        <div class="col-6 collapse-brand">
+                            <router-link to="/">
+                                <img :src="logo">
+                            </router-link>
+                        </div>
+                        <div class="col-6 collapse-close">
+                            <navbar-toggle-button @click.native="closeSidebar"></navbar-toggle-button>
+                        </div>
+                    </div>
+                </div>
 
                 <ul class="navbar-nav">
                     <slot name="links">
@@ -16,29 +30,6 @@
                 </ul>
                 <!--Divider-->
                 <hr class="my-3">
-                <!--Heading-->
-                <h6 class="navbar-heading text-muted">Documentation</h6>
-                <!--Navigation-->
-                <ul class="navbar-nav mb-md-3">
-                    <li class="nav-item">
-                        <a class="nav-link"
-                           href="https://id.atlassian.com/login?continue=https%3A%2F%2Fzpicyber.atlassian.net%2Flogin%3FredirectCount%3D1%26dest-url%3D%252Fjira%252Fsoftware%252Fprojects%252FZPI%252Fboards%252F1%26application%3Djira&application=jira">
-                            <i class="ni ni-spaceship"></i> JIRA
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                           href="https://github.com/Haxl0/zpi-frontend-master">
-                            <i class="ni ni-palette"></i> GITHUB Frontend
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                           href="https://github.com/mdembiczak/zpi-backend">
-                            <i class="ni ni-ui-04"></i> GITHUB Backend
-                        </a>
-                    </li>
-                </ul>
             </div>
             </div>
     </nav>
@@ -52,10 +43,13 @@
       NavbarToggleButton
     },
     props: {
+      logo: {
+        type: String,
+        default: 'img/brand/green.png'
+      },
       autoClose: {
         type: Boolean,
-        default: true,
-        description: 'Whether sidebar should autoclose on mobile when clicking an item'
+        default: true
       }
     },
     provide() {

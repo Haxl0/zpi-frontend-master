@@ -1,4 +1,4 @@
-import { Bar, mixins } from 'vue-chartjs';
+import {Bar, mixins} from 'vue-chartjs';
 import globalOptionsMixin from "@/components/Charts/globalOptionsMixin";
 
 export default {
@@ -24,7 +24,7 @@ export default {
           this.renderChart(this.chartData, this.extraOptions);
         }
       },
-      { immediate: true }
+      {immediate: true}
     );
   }
 };

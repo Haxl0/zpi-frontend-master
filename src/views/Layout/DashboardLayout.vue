@@ -4,45 +4,18 @@
     <side-bar>
       <template slot="links">
 
-        <sidebar-item
-          :link="{
-            name: 'Charts',
+        <sidebar-item :link="{
+            name: 'Predict',
+            path: '/predict',
+            icon: 'ni ni-settings-gear-65 text-warning'
+          }"></sidebar-item>
+
+        <sidebar-item :link="{
+            name: 'Wykresy',
             path: '/dashboard',
-            icon: 'ni ni-tv-2 text-primary',
-          }"
-        >
-        </sidebar-item>
+            icon: 'ni ni-chart-bar-32 text-warning',
+          }"></sidebar-item>
 
-        <sidebar-item
-              :link="{
-                name: 'Predict',
-                path: '/predict',
-                icon: 'ni ni-single-02 text-yellow'
-                }">
-        </sidebar-item>
-
-      </template>
-
-      <template slot="links-after">
-        <hr class="my-3">
-        <h6 class="navbar-heading p-0 text-muted">TESTs</h6>
-
-        <b-nav class="navbar-nav mb-md-3">
-          <b-nav-item
-               href="https://www.creative-tim.com/learning-lab/bootstrap-vue/quick-start/argon-dashboard"
-               >
-              <i class="ni ni-spaceship"></i>
-              <b-nav-text class="p-0">JIRA</b-nav-text>
-          </b-nav-item>
-          <b-nav-item href="https://www.creative-tim.com/learning-lab/bootstrap-vue/colors/argon-dashboard">
-              <i class="ni ni-palette"></i>
-              <b-nav-text class="p-0">GITHUB Frontend</b-nav-text>
-          </b-nav-item>
-          <b-nav-item href="https://www.creative-tim.com/learning-lab/bootstrap-vue/avatar/argon-dashboard">
-              <i class="ni ni-ui-04"></i>
-              <b-nav-text class="p-0">GITHUB Backend</b-nav-text>
-          </b-nav-item>
-        </b-nav>
       </template>
     </side-bar>
     <div class="main-content">
@@ -79,14 +52,12 @@
   }
 
   import DashboardNavbar from './DashboardNavbar.vue';
-  import ContentFooter from './ContentFooter.vue';
   import DashboardContent from './Content.vue';
-  import { FadeTransition } from 'vue2-transitions';
+  import {FadeTransition} from 'vue2-transitions';
 
   export default {
     components: {
       DashboardNavbar,
-      ContentFooter,
       DashboardContent,
       FadeTransition
     },
@@ -103,5 +74,4 @@
     }
   };
 </script>
-<style lang="scss">
-</style>
+<style lang="scss"></style>
